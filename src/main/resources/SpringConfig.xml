@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<bean id="CsvOutputGenerator" class="tw.acelan.output.impl.CsvOutputGenerator"/>
+
+	<bean id="OutputHelper" class="tw.acelan.output.OutputHelper">
+		<!-- 透過setter將實作類別「CsvOutputGenerator」進行注入 ，當您有新的實作類別時，只需更換這個設定即可 -->  
+		<property name="outputGenerator" ref="CsvOutputGenerator"/>
+	</bean>
+</beans>
